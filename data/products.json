@@ -1,16 +1,1 @@
-[
-  {
-    "id": "123456789",
-    "title": "Beats Wireless Headphones",
-    "imageUrl": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6316/6316142ld.jpg",
-    "description": "An excellent pair of beast wireless headphones perfect for listening to any kind of music. Comes with a bass boost feature.",
-    "price": "35"
-  },
-  {
-    "title": "Heart Purse",
-    "imageUrl": "https://prettydarncute.com/demos/prettycreative/wp-content/uploads/2015/08/heart_tote_1024x1024.jpg",
-    "description": "A cute little purse.",
-    "price": "20.00",
-    "id": "0.8372808256992135"
-  }
-]
+[{"title":"Beats Wireless Headphones!!!","imageUrl":"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6316/6316142ld.jpg","description":"An excellent pair of beast wireless headphones perfect for listening to any kind of music. Comes with a bass boost feature.","price":"35","id":"123456789"},{"title":"Heart Purse","imageUrl":"https://prettydarncute.com/demos/prettycreative/wp-content/uploads/2015/08/heart_tote_1024x1024.jpg","description":"A cute little purse.","price":"20.00","id":"0.8372808256992135"}]
