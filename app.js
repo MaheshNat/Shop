@@ -7,6 +7,8 @@ const errorController = require('./controllers/error');
 const sequelize = require('./util/database');
 const Product = require('./models/product');
 const User = require('./models/user');
+const Cart = require('./models/cart');
+const CartItem = require('./models/cart-item');
 
 const app = express();
 
@@ -21,11 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
   User.findByPk(1)
-    .then(user => {
+    .then((user) => {
       req.user = user;
       next();
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 });
@@ -37,20 +39,26 @@ app.use(errorController.get404);
 
 Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
 User.hasMany(Product);
+User.hasOne(Cart);
+Cart.belongsTo(User);
+Cart.belongsToMany(Product, { through: CartItem });
+Product.belongsToMany(Cart, { through: CartItem });
+
+app.listen(3000);
 
 sequelize
-  // .sync({ force: true })
-  .sync()
-  .then(result => {
+  .sync({ force: true })
+  // .sync()
+  .then((result) => {
     return User.findByPk(1);
   })
-  .then(user => {
+  .then((user) => {
     if (!user) return User.create({ name: 'Mahesh', email: 'test@gmail.com' });
     return user;
   })
-  .then(user => {
+  .then((user) => {
     console.log(user);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
