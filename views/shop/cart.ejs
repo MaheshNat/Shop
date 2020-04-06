@@ -15,9 +15,14 @@
                                 <button type="submit" class="btn">Delete</button>
                                 <input type="hidden" value="<%= p.id %>" name="productId">
                             </form>
-                        </li>
+                        </li>                        
                     <% }); %>
                 </ul>
+                <div class="centered">
+                    <form action="/create-order" method="POST">
+                        <button type="submit" class="btn order-now">Order Now!</button>
+                    </form>
+                </div>
             <% } else { %>
                 <h1>No Products Found!</h1>
             <% } %>
